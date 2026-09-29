@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #EEEEEE; 
+        }
+
+        .navbar {
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #000000;
+        }
+
+        .navbar .menu a {
+            text-decoration: none;
+            color: #000000; 
+            margin-left: 30px;
+            font-size: 14px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 70px);
+        }
+
+        .product-card {
+            background-color: #FFFFFF;
+            display: flex;
+            width: 700px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: background-color 0.3s ease;
+        }
+
+        .image-area {
+            background-color: #DDDDDD;
+            width: 50%;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .image-area img {
+            width: 100%;
+            height: auto;
+            transform: rotate(-15deg);
+        }
+
+        .product-info {
+            width: 50%;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .category {
+            color: #777777;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .product-name {
+            color: #000000;
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            color: #666666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #000000;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .color-label {
+            font-size: 12px;
+            color: #666666;
+            margin-bottom: 8px;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .color-btn {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .btn-black { background-color: #000000; }
+        .btn-blue { background-color: #4A90E2; }
+        .btn-cream { background-color: #F5E6CC; }
+
+        .add-to-cart {
+            background-color: #000000; 
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 0;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #444444; 
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SHOES.</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="product-card" id="productCard">
+            <div class="image-area">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Nike_shoes.jpg/640px-Nike_shoes.jpg" alt="Air Runner" style="mix-blend-mode: multiply;">
+            </div>
+            <div class="product-info">
+                <p class="category">RUNNING SHOES</p>
+                <h1 class="product-name">Air Runner</h1>
+                <p class="description">Sepatu lari yang nyaman untuk digunakan sehari-hari. Desain ringan dan fleksibel.</p>
+                <p class="price">Rp 899.000</p>
+                
+                <p class="color-label">Pilih warna:</p>
+                <div class="color-options">
+                    <button class="color-btn btn-black" onclick="changeBackgroundColor('#DDDDDD')"></button>
+                    <button class="color-btn btn-blue" onclick="changeBackgroundColor('#CFE2FF')"></button>
+                    <button class="color-btn btn-cream" onclick="changeBackgroundColor('#F5E6CC')"></button>
+                </div>
+
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function changeBackgroundColor(colorCode) {
+            var card = document.getElementById("productCard");
+            
+            card.style.backgroundColor = colorCode;
+        }
+    </script>
+</body>
+</html>
